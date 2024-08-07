@@ -7,10 +7,8 @@
   tasks:
     - name: "Make an HTTP query"
       register: this
-      vars:
-        expected: "<h1>Welcome to nginx!</h1>"
-      failed_when: this is failed or expected not in this.content
+      failed_when: this is failed or 'healthy' not in this.content
       ansible.builtin.uri:
-        url: "http://localhost:80"
+        url: "http://localhost:80/health/startup"
         method: "GET"
         return_content: true

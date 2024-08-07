@@ -17,8 +17,8 @@
 
 - name: "Push Nginx configuration file"
   ansible.builtin.copy:
-    src: "{{ file_config }}"
-    dest: "{{ project_path }}/conf.d/default.conf"
+    src: "{{ site_config }}"
+    dest: "{{ project_path }}/conf.d/{{ site_config | basename }}"
     owner: root
     group: www-data
     mode: "0660"
