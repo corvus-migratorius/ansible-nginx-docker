@@ -1,12 +1,12 @@
-template
+ansible-nginx-docker
 =========
 
-Template for Ansible role monorepos
+Deploy NGINX as a Docker container
 
 Requirements
 ------------
 
-None
+Docker
 
 Role Variables
 --------------
@@ -16,14 +16,14 @@ None
 Dependencies
 ------------
 
-None
+Soft dependency on `genlab.docker_ubuntu` (any means of installing Docker on the managed machine should be fine).
 
 Example Playbook
 ----------------
 
 ```yaml
 roles:
-    - role: genlab.template
+    - role: genlab.nginx_docker
 ```
 
 License

@@ -1,0 +1,14 @@
+---
+version: "3.9"
+
+services:
+
+  nginx:
+    image: nginx:{{ image_tag }}
+    container_name: nginx
+    hostname: nginx
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - "{{ project_path }}/conf.d/:/etc/nginx/conf.d/:ro"
+      - "/var/log/nginx/:/var/log/nginx/:rw"
