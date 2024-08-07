@@ -10,3 +10,6 @@ services:
     volumes:
       - "{{ project_path }}/conf.d/:/etc/nginx/conf.d/:ro"
       - "/var/log/nginx/:/var/log/nginx/:rw"
+{% for v in custom_volumes %}
+      - {{ v.from}}:{{v.to}}:{{v.mode | default('rw')}}
+{% endfor %}
