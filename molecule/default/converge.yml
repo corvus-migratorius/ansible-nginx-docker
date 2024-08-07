@@ -5,5 +5,4 @@
     - role: genlab.docker_ubuntu
 
     - role: genlab.nginx_docker
-      file_config: "nginx/default.conf"
-      www_root: "/usr/share/nginx/html"
+      site_config: "nginx/test.conf"
