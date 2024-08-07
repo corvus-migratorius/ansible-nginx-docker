@@ -23,7 +23,7 @@
     group: www-data
     mode: "0660"
 
-- name: "Build and start the `docker-compose` stack"
+- name: "Build and start the Compose stack"
   community.docker.docker_compose_v2:
     tls_hostname: localhost
     project_src: "{{ project_path }}"
