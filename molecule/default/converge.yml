@@ -2,4 +2,8 @@
 - name: Converge
   hosts: all
   roles:
-    - role: genlab.template
+    - role: genlab.docker_ubuntu
+
+    - role: genlab.nginx_docker
+      file_config: "nginx/default.conf"
+      www_root: "/usr/share/nginx/html"

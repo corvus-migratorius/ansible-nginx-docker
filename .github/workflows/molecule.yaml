@@ -29,6 +29,10 @@ jobs:
           init-shell: bash
           post-cleanup: 'all'
 
+      - name: Install role dependencies
+        run: ansible-galaxy install -r requirements.yaml
+        shell: micromamba-shell {0}
+
       - name: Run Molecule tests
         run: molecule test
         shell: micromamba-shell {0}

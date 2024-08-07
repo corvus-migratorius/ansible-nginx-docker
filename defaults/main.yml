@@ -1,1 +1,3 @@
 ---
+project_path: "/root/nginx-docker"
+image_tag: "alpine3.19"

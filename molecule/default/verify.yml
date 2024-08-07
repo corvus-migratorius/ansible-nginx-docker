@@ -5,7 +5,12 @@
   any_errors_fatal: true
 
   tasks:
-    - name: "Mock verification task"
-      changed_when: false
-      ansible.builtin.command:
-        cmd: "true"
+    - name: "Make an HTTP query"
+      register: this
+      vars:
+        expected: "<h1>Welcome to nginx!</h1>"
+      failed_when: this is failed or expected not in this.content
+      ansible.builtin.uri:
+        url: "http://localhost:80"
+        method: "GET"
+        return_content: true
